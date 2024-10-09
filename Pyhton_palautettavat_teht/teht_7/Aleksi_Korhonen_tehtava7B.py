@@ -11,13 +11,14 @@
 #Teksti: Tunturi
 #Käännettynä: IRUTNUt
 
+
 sana = input("Anna jokin sana: ")
-
 vaarinpain_sana = []
-sanan_pituus = len(sana)
 
-while sanan_pituus > 0:
-    vaarinpain_sana.append(sana[sanan_pituus - 1])
-    sanan_pituus -= 1
+for index in range(len(sana) - 1, -1, -1):
+    vaarinpain_sana.append(sana[index])
 
-print(f"Sanasi väärinpäin on: {vaarinpain_sana}")
+vaarinpain_sana = ''.join(vaarinpain_sana)
+vaarinpain_sana = vaarinpain_sana.swapcase()
+
+print(f"Sanasi väärinpäin ja kirjaimet vaihdettu on: {vaarinpain_sana}")
