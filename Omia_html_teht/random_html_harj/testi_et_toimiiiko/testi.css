@@ -1,0 +1,55 @@
+body {
+    background-color: aqua;
+}
+
+#stubb {
+    height: 400px;
+    width: 90%;
+}
+
+#mainBody {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.container img {
+    width: 100%;
+    height:auto;
+}
+
+.container .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 0);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#LIEKKI_GIF1 {
+    width: 48px;
+    height: 50px;
+    float: right;
+    position: sticky;
+    top: 0;
+}
+
+#LIEKKI_GIF2 {
+    width: 48px;
+    height: 50px;
+    float: left;
+    position: sticky;
+    top: 0;
+}
