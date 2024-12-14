@@ -1,0 +1,727 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    
+    html {
+    scroll-behavior: smooth;
+    }
+
+    .btn {
+    display: inline-block;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #0056b3;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    text-decoration: none;
+    }
+
+    .btn:hover {
+    background-color: #004494;
+    transform: scale(1.05);
+    }
+
+    .btn:active {
+    background-color: #003366;
+    transform: scale(0.95);
+    }
+
+    .container {
+    margin: 0 auto;
+    padding: 0 80px;
+    box-sizing: border-box;
+    background-color: #00336686;
+    }
+
+    .bg {
+    background-color: #ffffff;
+    }
+
+    body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    }
+
+    header.expanded {
+    height: auto;
+    }
+
+    header .header-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0056b3;
+    width: 100%;
+    margin: 10px 0;
+    }
+
+    svg {
+    width: 50px;
+    height: 50px;
+    }
+
+    header .logo svg {
+    max-height: 60px;
+    width: auto;
+    }
+
+    header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    }
+
+    header nav ul li a {
+    text-decoration: none;
+    color: #003366;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    }
+    header nav ul li a:hover {
+    color: #0056b3;
+    }
+    
+    header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 1000;
+    transition: height 0.3s ease;
+    }
+
+    .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    }
+
+    .menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    }
+
+    .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    }
+
+    @media (max-width: 768px) {
+    .menu-toggle {
+    display: flex;
+    }
+
+    header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    }
+
+    .nav-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    display: none;
+    background: #beeaff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 5px 5px;
+    }
+
+    .nav-links.show {
+    display: flex;
+    }
+
+    .nav-links li a {
+    color: #333;
+    font-size: 16px;
+    }
+    }
+
+    #scrolling-image-section {
+    position: relative;
+    filter: brightness(50%);
+    height: 1000px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    }
+
+    .scroll-image {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .scroll-image.visible {
+    opacity: 1;
+    transform: translateY(0);
+    }
+
+    header::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 2%;
+    width: 96%;
+    height: 5px;
+    background-color: #0056b3;
+    border-radius: 3px;
+    }
+
+    .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    margin-bottom: 40px;
+    background-color: #eaf2ff;
+    border-bottom: 2px solid #ddd;
+    }
+
+    .hero-form-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+    }
+
+    .hero-text-container{
+    flex: 1;
+    position: relative;
+    display: table-column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+    }
+
+    .hero-text-container {
+    background: url('kuvat/Electrician-at-work-801547-scaledd.jpg') no-repeat center center;
+    clip-path: polygon(0 0, 80% 0, 100% 30%, 100% 70%, 78% 100%, 0 100%, 0% 70%, 0% 30%);
+    background-size: cover;
+    height: 400px;
+    }
+
+    .hero-form-container {
+    background: url('kuvat/istockphoto-1329380127-612x612.jpg') no-repeat center center;
+    clip-path: polygon(25% 0, 100% 0, 100% 30%, 100% 70%, 100% 100%, 30% 100%, 0% 70%, 0% 30%);
+    background-size: cover;
+    height: 400px;
+    }
+
+    .hero-text {
+    max-width: 600px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    form {
+    max-width: 400px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    }
+
+    form input, form textarea, form button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    }
+
+    form input, form textarea {
+    background-color: #fff;
+    color: #333;
+    }
+
+    form button {
+    background-color: #0056b3;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+    background-color: #004494;
+    }
+
+    .info {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    margin-bottom: 40px;
+    background: #fff;
+    border-bottom: 2px solid #ddd;
+    }
+
+    .info-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    }
+    
+    .info-text {
+    flex: 1;
+    padding-left: 20px;
+    }
+
+    .info-text h2 {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 20px;
+    }
+
+    .info-text p {
+    font-size: 1rem;
+    color: #555;
+    }
+
+    .pankki {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    padding: 0 20px;
+    }
+
+    .pankki_bg img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .pankki_info {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    }
+
+    .pankki_info h2 {
+    color: #0056b3;
+    margin-bottom: 10px;
+    }
+
+    .pankki_info p {
+    color: #555;
+    line-height: 1.6;
+    }
+
+    .pankki_details {
+    margin-top: 20px;
+    padding: 10px 0;
+    color: #333;
+    line-height: 1.6;
+    }
+
+    .pankki_details h3 {
+    margin-bottom: 15px;
+    color: #0056b3;
+    }
+
+    .pankki_details ul {
+    margin: 0 0 20px 20px;
+    padding: 0;
+    }
+
+    .pankki_details ul li {
+    margin-bottom: 10px;
+    }
+
+    .pankki_details p {
+    margin-top: 0;
+    }
+
+    .btn-nav-sivu2{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px 0;
+    background-color: #eaf2ff;
+    border-bottom: 2px solid #ddd;
+    padding: 40px;
+    }
+
+    .info-box {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    .info-box h2 {
+    color: #0056b3;
+    margin-bottom: 10px;
+    }
+
+    .info-box ul {
+    margin-left: 20px;
+    }
+
+    .info-box img {
+    border-radius: 10px;
+    max-width: 100%;
+    }
+
+    .contact {
+    padding: 40px;
+    clip-path: polygon(50% 18%, 100% 0, 100% 100%, 0 100%, 0 0);
+    background: url('kuvat/9-Questions-to-Ask-an-Electrician-in-Georgia-1024x512.jpg') no-repeat center center/cover;
+    text-align: center;
+    }
+
+    .ota_yht {
+    color: #003366;
+    text-align:center;
+    }
+
+    .contact h2 {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 20px;
+    }
+
+    .contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    }
+
+    .contact form input,
+    .contact form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    }
+
+    .contact form button {
+    width: 100%;
+    padding: 10px;
+    background: #003366;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+    .contact form button:hover {
+    background: #0055cc;
+    }
+
+    .featured-services {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    }
+
+    .service {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .service img {
+    width: 400px;
+    height: auto;
+    border-radius: 8px;
+    border: 6px solid #0056b3;
+    padding: 1px;
+    }
+
+    .service-info h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+    }
+
+    .service-info p {
+    margin: 5px 0 0;
+    color: #555;
+    }
+
+    footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    background: #003366;
+    color: #fff;
+    }
+
+    footer h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    }
+
+    footer p {
+    font-size: 0.9rem;
+    }
+
+    footer a {
+    color: #ccc;
+    text-decoration: none;
+    }
+
+    footer a:hover {
+    color: #fff;
+    }
+
+    @media (max-width: 768px) {
+    header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+    }
+
+    header nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    }
+
+    @media (max-width: 768px) {
+    header .header-title {
+    font-size: 1.5rem;
+    }
+    }
+
+    @media (max-width: 480px) {
+    header .header-title {
+    font-size: 1.2rem;
+    }
+    }
+
+    .hero {
+    flex-direction: column;
+    padding: 20px;
+    height: auto;
+    }
+
+    .hero-text-container, .hero-form-container {
+    height: auto;
+    padding: 15px;
+    clip-path: none;
+    }
+
+    .hero-text, form {
+    max-width: 100%;
+    }
+
+    .info {
+    flex-direction: column;
+    padding: 20px;
+    }
+
+    .info-text {
+    padding-left: 0;
+    text-align: center;
+    }
+
+    .contact {
+    clip-path: none;
+    padding: 20px;
+    }
+
+    .contact form {
+    padding: 15px;
+    max-width: 100%;
+    }
+
+    footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 10px;
+    }
+    }
+
+    @media (max-width: 480px) {
+    header .logo svg {
+    max-height: 40px;
+    }
+
+    .hero-text-container, .hero-form-container {
+    padding: 10px;
+    }
+
+    .hero-text, form {
+    font-size: 0.9rem;
+    }
+
+    .info-text h2 {
+    font-size: 1.5rem;
+    }
+
+    .info-text p {
+    font-size: 0.9rem;
+    }
+
+    footer {
+    padding: 15px 5px;
+    }
+    }
+
+    @media (max-width: 1200px) {
+    .container {
+    padding: 0 60px;
+    }
+    }
+
+    @media (max-width: 992px) {
+    .container {
+    padding: 0 40px;
+    }
+
+    .btn {
+    font-size: 14px;
+    padding: 8px 16px;
+    }
+    }
+
+    @media (max-width: 768px) {
+    .container {
+    padding: 0 20px;
+    }
+
+    .btn {
+    font-size: 12px;
+    padding: 6px 12px;
+    }
+    }
+
+    @media (max-width: 576px) {
+    .container {
+    padding: 0 10px;
+    }
+
+    .btn {
+    font-size: 10px;
+    padding: 4px 8px;
+    }
+    }
+
+    @media (max-width: 768px) {
+    .pankki_info {
+    font-size: 0.9rem;
+    }
+    }
+
+    @media (max-width: 576px) {
+    .pankki_info {
+    font-size: 0.8rem;
+    }
+    }
+
+    @media (max-width: 768px) {
+    .service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .service img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    }
+
+    .service-info {
+    text-align: center;
+    padding: 0 15px;
+    }
+    }
+
+    @media (max-width: 576px) {
+        #scrolling-image-section {
+            display: none;
+            height: 100px;
+        }
+        .scroll-image {
+            display: none;
+            height: 100px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        #scrolling-image-section {
+            display: none;
+            height: 100px;
+        }
+        .scroll-image {
+            display: none;
+            height: 100px;
+        }
+    }
